@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Fact</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1> Buscar Cat Fact</h1>
+
+    <button onclick="buscarCat()">Fato aleatório</button>
+
+    <p id="aviso"></p>
+
+    <div id="resultado"></div>
+
+    <script>
+        async function buscarCat() {
+            const aviso = document.getElementById('aviso');
+            const resultado = document.getElementById('resultado');
+
+            const resposta = await fetch('https://catfact.ninja/fact');
+
+            if (!resposta.ok) {
+                aviso.textContent =
+                    'Fato não encontrado. Código: ' + resposta.status;
+                return;
+            }
+
+            const dados = await resposta.json();
+
+            aviso.textContent = '';
+
+            resultado.innerHTML = `
+                <h2>${dados.fact}</h2>
+            `;
+        }
+    </script>
+
+</body>
+
+</html>
+```
