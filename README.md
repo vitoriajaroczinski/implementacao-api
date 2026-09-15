@@ -14,7 +14,6 @@
 
 ## Como rodar:
 = Abrir o HTML no navegador e clicar no botão “Fato aleatório”. O site busca um fato de gato pela API e mostra na tela.
- Uma dificuldade que tivemos:
 
  ## Uma dificuldade que tivemos:
 = Tivemos dificuldade para entender como fazer a requisição com fetch() e mostrar o resultado da API na tela.
